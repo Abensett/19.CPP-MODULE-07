@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:38:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/07/20 19:52:57 by abensett         ###   ########.fr       */
+/*   Updated: 2022/07/20 22:27:53 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 
 template<typename T> class Array
 {
-	private:
-		T				*_data;
-		unsigned int	_size;
-		
 	public:
 		Array(void) : _data(NULL), _size(0) {}
 		Array(const unsigned int n) : _data(new T[n]), _size(n) {}
@@ -60,6 +56,9 @@ template<typename T> class Array
 					return ("Array::exception : index is out of range");
 				}
 		};
+	private:
+		T				*_data;
+		unsigned int	_size;
 
 };
 

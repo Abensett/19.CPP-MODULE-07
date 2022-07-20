@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/15 16:25:41 by abensett          #+#    #+#             */
-/*   Updated: 2022/07/20 19:44:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/07/20 21:39:50 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 using std::cout;
 using std::endl;
 
-int main( void ) 
+int main( void )
 {
 	int a = 2;
 	int b = 3;
