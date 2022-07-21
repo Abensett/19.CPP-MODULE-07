@@ -1,6 +1,7 @@
 # 19.CPP-MODULE-07
 
 * [Templates](#Templates)  
+* [Templates de classe](#Templates-de-classe)  
 
 ### Templates
 > Self-explanatory see the example
