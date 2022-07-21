@@ -2,6 +2,9 @@
 
 * [Templates](#Templates)  
 * [Templates de classe](#Templates-de-classe)  
+* [Default type && operator overload](#efault-type-&&-operator-overload)  
+* [Specialization](#Specialization)  
+* [Parametric macros](#Parametric macros)  
 
 ### Templates
 > Self-explanatory see the example
@@ -48,4 +51,11 @@ class randomClass<int, U> {...}
 template<>
 class randomClass<bool, bool> {...}		// Full
 
+```
+
+### Parametric macros
+> kind of templates in c
+> Pas ouf, limites vite atteintes
+```C
+#define max(x,y) (((x)==(y)) > (x) : (y))
 ```
