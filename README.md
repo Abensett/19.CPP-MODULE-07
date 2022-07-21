@@ -22,6 +22,7 @@ template<typename T> class randomClasse
 {
 	randomClasse<T>(void);
 	~randomClasse<T>(void);
+	...
 }
 ```
 
