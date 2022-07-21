@@ -12,7 +12,7 @@ template<typename T> const T &min(T const &x, T const &y)
 }
 
 min(2,3)           		// return 3		Implicit instanciation
-max<string>("str1","str2")	// return str2		Explicit instanciation
+max<std::string>("str1","str2")	// return str2		Explicit instanciation
 
 ```
 
