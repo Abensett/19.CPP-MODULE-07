@@ -11,8 +11,8 @@ template<typename T> const T &min(T const &x, T const &y)
 	return (x < y ? x : y);
 }
 
-min(2,3)           		// return 3		Implicit instanciation
-max<std::string>("str1","str2")	// return str2		Explicit instanciation
+min(2,3)           				// return 3		Implicit instanciation
+max<std::string>("str1","str2")			// return str2		Explicit instanciation
 
 ```
 
@@ -23,4 +23,28 @@ template<typename T> class randomClasse
 	randomClasse<T>(void);
 	~randomClasse<T>(void);
 }
+```
+
+
+### Default type && operator overload
+```C++
+template<typename T = int> class randomClasse	// default type is integer	
+{...}
+
+template<typename T> ostream & operator<<(...)	// operator overloads have to be templates as well
+
+```
+
+### Specialization
+> Variante d'un template qui peut être partielle ou complète
+```C++
+template<typename T, typename U> class randomClass	
+{...}
+
+template<typename U>				// Partial
+class randomClass<int, U> {...}
+
+template<>
+class randomClass<bool, bool> {...}		// Full
+
 ```
