@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:38:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/07/20 22:27:53 by abensett         ###   ########.fr       */
+/*   Updated: 2022/07/21 14:55:26 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,21 @@
 template<typename T> class Array
 {
 	public:
-		Array(void) : _data(NULL), _size(0) {}
-		Array(const unsigned int n) : _data(new T[n]), _size(n) {}
-		Array(const Array<T> &array) : _data(NULL), _size(0) { *this = array; }
-		virtual ~Array() { delete [] _data; }
+		Array(void) : _array(NULL), _size(0) {}
+		Array(const unsigned int n) : _array(new T[n]), _size(n) {}
+		Array(const Array<T> &array) : _array(NULL), _size(0) { *this = array; }
+		virtual ~Array() { delete [] _array; }
 
 		Array<T>	&operator=(const Array<T> &array)
 		{
 			if (this != &array)
 			{
 				if (_size > 0)
-					delete [] _data;
+					delete [] _array;
 				_size = array._size;
-				_data = new T[array._size];
+				_array = new T[array._size];
 				for (unsigned int i = 0; i < _size; i++)
-					_data[i] = array._data[i];
+					_array[i] = array._array[i];
 			}
 			return (*this);
 		}
@@ -43,7 +43,7 @@ template<typename T> class Array
 		{
 			if (i < 0 || static_cast<unsigned int>(i) >= _size)
 				throw OutOfRange();
-			return (_data[i]);
+			return (_array[i]);
 		}
 
 		unsigned int	size(void) const { return (_size); }
@@ -57,16 +57,16 @@ template<typename T> class Array
 				}
 		};
 	private:
-		T				*_data;
+		T				*_array;
 		unsigned int	_size;
 
 };
 
 template<typename T> std::ostream	&operator<<(std::ostream &o, const Array<T> &array)
 {
-	unsigned int	max = 5;
+	unsigned int	max = 10;
 
-	o << "[" << array.size() << "] ";
+	o << "[size:" << array.size() << "] ";
 	for (unsigned int i = 0; i < array.size() && i < max; i++)
 		o << array[i] << " ";
 	if (max < array.size())
