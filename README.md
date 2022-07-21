@@ -4,7 +4,7 @@
 
 ### Templates
 > Self-explanatory see the example
-```C
+```C++
 template<typename T> const T &min(T const &x, T const &y)
 {
 	return (x < y ? x : y);
@@ -13,4 +13,13 @@ template<typename T> const T &min(T const &x, T const &y)
 min(2,3)           		// return 3		Implicit instanciation
 max<string>("str1","str2")	// return str2		Explicit instanciation
 
+```
+
+### Templates de classe
+```C++
+template<typename T> class randomClasse
+{
+	randomClasse<T>(void);
+	~randomClasse<T>(void);
+}
 ```
